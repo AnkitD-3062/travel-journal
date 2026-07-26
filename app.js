@@ -1,0 +1,20 @@
+const stays = [
+  { name: "Tarn House", loc: "Kielder Water, England", price: 118, rating: 4.9, tags: ["water", "quiet", "secluded", "warm light", "cabin", "wifi"], color: "linear-gradient(135deg,#2e4a63,#1b2e42 60%,#3e5b47)", blurb: "A timber one-room cabin on stilts over still water, with gas lamps lit each evening." },
+  { name: "Millrace Loft", loc: "Cotswolds, England", price: 96, rating: 4.7, tags: ["water", "wifi", "cabin", "warm light", "city"], color: "linear-gradient(135deg,#3b4a3b,#25301f 60%,#5c6b45)", blurb: "A converted mill loft above a running river, exposed beams, and fast fibre." },
+  { name: "Vaiara Water Villa", loc: "Bora Bora, French Polynesia", price: 640, rating: 4.9, tags: ["overwater", "water", "warm light"], color: "linear-gradient(135deg,#1e5a6b,#0d2e38 60%,#3e8e9e)", blurb: "A classic overwater bungalow with a glass floor and private lagoon ladder." },
+  { name: "Herengracht Nook", loc: "Amsterdam, Netherlands", price: 151, rating: 4.6, tags: ["water", "city", "food", "wifi"], color: "linear-gradient(135deg,#2a3a4a,#161f29 60%,#4a5a3a)", blurb: "Canal-house flat with exceptional restaurants within a short walk." },
+  { name: "Wren Shed", loc: "Snowdonia, Wales", price: 52, rating: 4.5, tags: ["cheap", "water", "quiet", "cabin", "secluded"], color: "linear-gradient(135deg,#324a34,#182619 60%,#4f6a3e)", blurb: "A no-frills timber hideaway with a wood burner, four minutes from a lake." },
+  { name: "Reed Barge", loc: "Kerala Backwaters, India", price: 88, rating: 4.7, tags: ["water", "quiet", "warm light", "secluded", "cheap"], color: "linear-gradient(135deg,#2e4a3e,#162a20 60%,#4c6e4e)", blurb: "A quiet houseboat off the main channel, with evening lamps and slow water." }
+];
+
+const keywords = { quiet:["quiet","silent","peaceful"], water:["water","lake","river","fjord","canal","ocean"], secluded:["secluded","remote","private"], "warm light":["warm light","lamp","glow","cozy","cosy"], cabin:["cabin","cottage","hut","shed"], wifi:["wifi","wi-fi","internet","remote work"], cheap:["cheap","budget","affordable","under $"], city:["city","walkable","central"], food:["michelin","restaurant","food"], overwater:["overwater","over water","bungalow"] };
+const prompt = document.querySelector("#prompt");
+const results = document.querySelector("#results");
+const tags = document.querySelector("#tags");
+
+function findTags(text) { const normalized = text.toLowerCase(); return Object.entries(keywords).filter(([, words]) => words.some(word => normalized.includes(word))).map(([tag]) => tag); }
+function card(stay, match) { return `<article class="card"><div class="scene" style="background:${stay.color}"><span class="badge">${match}%<br>match</span></div><div class="card-body"><p class="location">${stay.loc}</p><h3>${stay.name}</h3><p>${stay.blurb}</p><div class="meta"><strong>$${stay.price}/night</strong><span>★ ${stay.rating}</span></div></div></article>`; }
+function search() { const selected = findTags(prompt.value); tags.innerHTML = selected.map(tag => `<span class="tag">${tag}</span>`).join(""); const ranked = stays.map(stay => ({ stay, score:selected.filter(tag => stay.tags.includes(tag)).length })).sort((a,b) => b.score - a.score); if (!selected.length) { results.innerHTML = '<p class="empty">Describe the trip you want, or choose one of the examples above.</p>'; return; } const matches = ranked.filter(item => item.score).slice(0,6); results.innerHTML = matches.length ? `<div class="board-head"><h2>Your board</h2><span>${matches.length} matches, ranked by fit</span></div><div class="grid">${matches.map(({stay,score}) => card(stay, Math.round(score / selected.length * 100))).join("")}</div>` : '<p class="empty">No stay matches that combination yet. Try relaxing one preference.</p>'; }
+document.querySelector("#search-button").addEventListener("click", search);
+prompt.addEventListener("keydown", event => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); search(); } });
+document.querySelectorAll("[data-example]").forEach(button => button.addEventListener("click", () => { prompt.value = button.dataset.example; search(); }));

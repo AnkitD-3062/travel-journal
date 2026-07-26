@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Discover stays by the feeling of the trip." />
+    <title>Travel Journal — Find the vibe</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="container hero-content">
+          <p class="eyebrow">Field Notes / Departure 01</p>
+          <h1>Describe the trip, not the filters.</h1>
+          <p>Skip the fifteen dropdowns. Say what the place should feel like — we’ll build the board.</p>
+        </div>
+      </section>
+
+      <section class="container search-shell" aria-label="Travel search">
+        <div class="ticket">
+          <label for="prompt">✦ Boarding — one sentence is enough</label>
+          <div class="search-row">
+            <textarea id="prompt" rows="2" placeholder="e.g. a quiet cabin near water with fast wifi and warm light in the evenings"></textarea>
+            <button id="search-button" type="button">Find the vibe →</button>
+          </div>
+          <div class="examples" aria-label="Search examples">
+            <span>Try:</span>
+            <button type="button" data-example="a quiet cabin near water with warm light">quiet cabin, water, warm light</button>
+            <button type="button" data-example="somewhere secluded and cheap by a lake">secluded + cheap by a lake</button>
+            <button type="button" data-example="an overwater bungalow near a Michelin restaurant">overwater + Michelin</button>
+          </div>
+        </div>
+        <div id="tags" class="tags" aria-live="polite"></div>
+        <section id="results" aria-live="polite"></section>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
