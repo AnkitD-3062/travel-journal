@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ink: #12182b;
+    --paper: #f4efe3;
+    --gold: #c9a227;
+    --teal: #4c7a6e;
+    --brick: #a9503f;
+    --muted: #8a93ac;
+  }
+
+  body {
+    background-color: #12182b;
+    color: #f4efe3;
+    font-family: "Plus Jakarta Sans", -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, .font-editorial {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+
+  .font-stamp {
+    font-family: "Cinzel", Georgia, serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #12182b;
+}
+::-webkit-scrollbar-thumb {
+  background: #232d46;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a227;
+}
+
+/* Leaflet dark theme map adjustments */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background: #12182b !important;
+  font-family: inherit;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #1b2337 !important;
+  color: #f4efe3 !important;
+  border-radius: 12px !important;
+  border: 1px solid #2e3b59 !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+.leaflet-popup-tip {
+  background: #1b2337 !important;
+}
