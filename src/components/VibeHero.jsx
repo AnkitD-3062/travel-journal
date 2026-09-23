@@ -32,25 +32,15 @@ export default function VibeHero({
   return (
     <section className="relative w-full">
       {/* ---------- Hero Photo Band (Flat-lay travel desk) ---------- */}
-      <div 
-        className="relative w-full min-h-[44vw] max-h-[460px] bg-cover bg-center flex items-end"
+      <div
+        className="relative w-full min-h-[clamp(320px,56vw,680px)] bg-cover bg-center bg-no-repeat"
+        role="img"
+        aria-label="Travel journal with postcards, a compass, and travel keepsakes"
         style={{
-          backgroundImage: `linear-gradient(180deg, rgba(18,24,43,0.15) 0%, rgba(18,24,43,0.45) 45%, rgba(18,24,43,0.96) 92%), url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=2000&q=85')`,
-          backgroundPosition: "center 38%"
+          backgroundImage: "url('/travel-journal-hero.png')",
+          backgroundPosition: "center center"
         }}
-      >
-        <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 pb-20 sm:pb-24">
-          <p className="font-mono text-[11px] sm:text-xs tracking-[3px] uppercase text-gold-light mb-2.5 drop-shadow-md">
-            Field Notes / Departure 01
-          </p>
-          <h1 className="font-editorial italic font-semibold text-3xl sm:text-5xl lg:text-6xl text-paper tracking-tight leading-[1.1] mb-2 drop-shadow-lg max-w-2xl">
-            Describe the trip, not the filters.
-          </h1>
-          <p className="text-sm sm:text-base text-[#e5dbca] max-w-xl drop-shadow-md font-light">
-            Skip the fifteen dropdowns. Say what the place should feel like — we'll build the board.
-          </p>
-        </div>
-      </div>
+      />
 
       {/* ---------- Floating Boarding Ticket (Overlapping by -mt-14) ---------- */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-20 -mt-14 sm:-mt-16">
@@ -58,7 +48,7 @@ export default function VibeHero({
           {/* Ticket Header */}
           <div className="flex items-center justify-between mb-3">
             <p className="font-mono text-xs uppercase tracking-wider text-[#8c733e] font-semibold flex items-center gap-1.5">
-              <span>?</span> Boarding — one sentence is enough
+              <span>?</span> Boarding ï¿½ one sentence is enough
             </p>
             {searchPrompt && (
               <button
@@ -78,7 +68,7 @@ export default function VibeHero({
                 rows={2}
                 value={searchPrompt}
                 onChange={(e) => setSearchPrompt(e.target.value)}
-                placeholder="e.g. a quiet cabin near water with fast wifi and warm light in the evenings…"
+                placeholder="e.g. a quiet cabin near water with fast wifi and warm light in the eveningsï¿½"
                 className="w-full bg-transparent border-0 border-b border-[#c7bda3] rounded-none py-2 text-base text-ink placeholder:text-[#8a8069] focus:outline-none focus:border-ink transition-colors resize-none font-sans"
               />
             </div>
