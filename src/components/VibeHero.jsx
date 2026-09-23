@@ -33,7 +33,7 @@ export default function VibeHero({
     <section className="relative w-full">
       {/* ---------- Hero Photo Band (Flat-lay travel desk) ---------- */}
       <div
-        className="relative w-full min-h-[clamp(320px,56vw,680px)] bg-cover bg-center bg-no-repeat"
+        className="relative w-full min-h-[44vw] max-h-[460px] bg-cover bg-center bg-no-repeat"
         role="img"
         aria-label="Travel journal with postcards, a compass, and travel keepsakes"
         style={{
