@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useMemo } from "react";
-import Navbar from "./components/Navbar";
 import VibeHero from "./components/VibeHero";
 import StayCard from "./components/StayCard";
 import StayDetailsModal from "./components/StayDetailsModal";
@@ -100,13 +99,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-ink text-paper flex flex-col font-sans">
-      {/* Top Navigation */}
-      <Navbar
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        bookingsCount={bookings.length}
-      />
-
       {/* Main View Area */}
       <main className="flex-1">
         {activeTab === "explore" && (
@@ -133,7 +125,7 @@ export default function App() {
                     Your Curated Sanctuaries
                   </h2>
                   <p className="text-xs sm:text-sm text-muted mt-1 font-mono">
-                    {rankedStays.length} stays matching your rhythm • Ranked by vibe harmony
+                    {rankedStays.length} stays matching your rhythm ï¿½ Ranked by vibe harmony
                   </p>
                 </div>
               </div>
@@ -232,10 +224,10 @@ export default function App() {
             <span>Travel Journal</span>
           </div>
           <p className="font-light">
-            Stay discovery by feeling • Handcrafted with vintage editorial care & Airbnb-grade experience.
+            Stay discovery by feeling ï¿½ Handcrafted with vintage editorial care & Airbnb-grade experience.
           </p>
           <p className="font-mono text-[11px] text-muted/60">
-            © 2026 Travel Journal Platform • All sample stays, photos & coordinates curated for immersive discovery.
+            ï¿½ 2026 Travel Journal Platform ï¿½ All sample stays, photos & coordinates curated for immersive discovery.
           </p>
         </div>
       </footer>
