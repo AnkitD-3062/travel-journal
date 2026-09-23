@@ -73,7 +73,7 @@ export default function BookingModal({ stay, isOpen, onClose, onBookingSuccess }
       status: "Confirmed",
       lockboxCode: stay.lockboxCode || "TL-5521",
       wifiDetails: stay.wifiDetails || { ssid: "StayGuest", pass: "traveljournal2026" },
-      weather: { temp: "18∞C", condition: "Crisp & Clear", icon: "???" },
+      weather: { temp: "18¬∞C", condition: "Crisp & Clear", icon: "üå§Ô∏è" },
       packingList: [
         { item: "Travel notebook & camera", checked: true },
         { item: "Warm layered clothing", checked: false },
@@ -254,7 +254,7 @@ export default function BookingModal({ stay, isOpen, onClose, onBookingSuccess }
             {/* Price Breakdown */}
             <div className="p-4 rounded-xl bg-ink-light border border-ink-border space-y-2 text-xs">
               <div className="flex justify-between text-paper/80">
-                <span>${stay.price} ◊ {nights} nights</span>
+                <span>${stay.price} √ó {nights} nights</span>
                 <span className="font-mono">${basePrice}</span>
               </div>
               <div className="flex justify-between text-paper/80">
@@ -276,7 +276,7 @@ export default function BookingModal({ stay, isOpen, onClose, onBookingSuccess }
               onClick={handleConfirm}
               className="w-full py-4 rounded-xl bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-ink font-bold uppercase tracking-wider font-mono text-sm transition-all shadow-glow-gold flex items-center justify-center gap-2 hover:scale-[1.01]"
             >
-              <span>Check In to Book ({nights} Nights ï ${totalPrice})</span>
+              <span>Check In to Book ({nights} Nights ‚Ä¢ ${totalPrice})</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>

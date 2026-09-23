@@ -20,7 +20,7 @@ export const PASSPORT_STAMPS = [
   {
     country: "United Kingdom",
     city: "Northumberland",
-    symbol: "??",
+    symbol: "🌌",
     color: "#4c7a6e",
     dateIssued: "2026-08-14",
     tag: "Dark Sky Reserve"
@@ -28,7 +28,7 @@ export const PASSPORT_STAMPS = [
   {
     country: "Japan",
     city: "Kyoto",
-    symbol: "??",
+    symbol: "🎋",
     color: "#a9503f",
     dateIssued: "2026-05-22",
     tag: "Bamboo & Hinoki"
@@ -36,7 +36,7 @@ export const PASSPORT_STAMPS = [
   {
     country: "Italy",
     city: "Amalfi Coast",
-    symbol: "??",
+    symbol: "🍋",
     color: "#c9a227",
     dateIssued: "2026-06-19",
     tag: "Pergola & Azure"
@@ -44,7 +44,7 @@ export const PASSPORT_STAMPS = [
   {
     country: "French Polynesia",
     city: "Bora Bora",
-    symbol: "??",
+    symbol: "🏝️",
     color: "#2e6f7e",
     dateIssued: "2026-07-04",
     tag: "Glass Lagoon"
@@ -52,7 +52,7 @@ export const PASSPORT_STAMPS = [
   {
     country: "Morocco",
     city: "Marrakech",
-    symbol: "??",
+    symbol: "🕌",
     color: "#a05b38",
     dateIssued: "2026-09-02",
     tag: "Medina Zellige"
@@ -60,7 +60,7 @@ export const PASSPORT_STAMPS = [
   {
     country: "Switzerland",
     city: "Zermatt",
-    symbol: "???",
+    symbol: "🏔️",
     color: "#3f5a7a",
     dateIssued: "2026-01-15",
     tag: "Glacier High Peak"
@@ -82,7 +82,7 @@ export const INITIAL_BOOKINGS = [
     vibeIntention: "Creative Writing & Forest Solitude",
     bookingCode: "TJ-KLD-9418",
     status: "Confirmed",
-    weather: { temp: "14�C", condition: "Misty Rain", icon: "???" },
+    weather: { temp: "14°C", condition: "Misty Rain", icon: "🌧️" },
     packingList: [
       { item: "Warm Shetland wool sweater", checked: true },
       { item: "Moleskine journal & fountain pen", checked: true },
