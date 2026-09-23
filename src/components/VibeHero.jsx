@@ -37,7 +37,7 @@ export default function VibeHero({
         role="img"
         aria-label="Travel journal with postcards, a compass, and travel keepsakes"
         style={{
-          backgroundImage: "url('/travel-journal-hero.png')",
+          backgroundImage: `url('${import.meta.env.BASE_URL}travel-journal-hero.png')`,
           backgroundPosition: "center center"
         }}
       />
@@ -48,7 +48,7 @@ export default function VibeHero({
           {/* Ticket Header */}
           <div className="flex items-center justify-between mb-3">
             <p className="font-mono text-xs uppercase tracking-wider text-[#8c733e] font-semibold flex items-center gap-1.5">
-              <span>?</span> Boarding � one sentence is enough
+              <span>✈️</span> Boarding • one sentence is enough
             </p>
             {searchPrompt && (
               <button
@@ -68,7 +68,7 @@ export default function VibeHero({
                 rows={2}
                 value={searchPrompt}
                 onChange={(e) => setSearchPrompt(e.target.value)}
-                placeholder="e.g. a quiet cabin near water with fast wifi and warm light in the evenings�"
+                placeholder="e.g. a quiet cabin near water with fast wifi and warm light in the evenings…"
                 className="w-full bg-transparent border-0 border-b border-[#c7bda3] rounded-none py-2 text-base text-ink placeholder:text-[#8a8069] focus:outline-none focus:border-ink transition-colors resize-none font-sans"
               />
             </div>
@@ -78,7 +78,7 @@ export default function VibeHero({
               className="bg-ink hover:bg-ink-light text-gold font-mono text-xs uppercase tracking-widest font-bold px-6 py-3.5 rounded-xl transition-all shadow-md whitespace-nowrap flex items-center justify-center gap-2 hover:scale-[1.02]"
             >
               <span>Find the vibe</span>
-              <span>?</span>
+              <span>✨</span>
             </button>
           </div>
 
@@ -159,7 +159,7 @@ export default function VibeHero({
                 <option value="vibe" className="bg-ink">Best Fit</option>
                 <option value="price-asc" className="bg-ink">Price: Low to High</option>
                 <option value="price-desc" className="bg-ink">Price: High to Low</option>
-                <option value="rating" className="bg-ink">Top Rated ?</option>
+                <option value="rating" className="bg-ink">Top Rated ★</option>
               </select>
             </div>
           </div>

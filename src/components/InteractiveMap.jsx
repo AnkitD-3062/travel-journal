@@ -46,14 +46,14 @@ export default function InteractiveMap({ stays, onSelectStay, onBookStay }) {
   const defaultCenter = [30.0, 10.0];
 
   return (
-    <div className="w-full h-[calc(100vh-140px)] min-h-[500px] relative rounded-2xl overflow-hidden border border-ink-border shadow-2xl">
+    <div className="w-full h-[calc(100vh-140px)] min-h-[500px] relative isolate rounded-2xl overflow-hidden border border-ink-border shadow-2xl">
       {/* Map Overlay Badge */}
       <div className="absolute top-4 left-4 z-[1000] bg-ink/90 backdrop-blur-md border border-ink-border px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 text-xs">
         <Sparkles className="w-4 h-4 text-gold" />
         <span className="font-mono text-paper font-semibold">
           {stays.length} Sanctuaries on Map
         </span>
-        <span className="text-muted font-light">� Click any price marker to inspect</span>
+        <span className="text-muted font-light">• Click any price marker to inspect</span>
       </div>
 
       <MapContainer
@@ -83,7 +83,7 @@ export default function InteractiveMap({ stays, onSelectStay, onBookStay }) {
                 <div>
                   <div className="flex items-center justify-between text-[11px] font-mono text-teal-light mb-1">
                     <span className="truncate max-w-[170px]">{stay.location}</span>
-                    <span className="text-gold font-bold">? {stay.rating}</span>
+                    <span className="text-gold font-bold">★ {stay.rating}</span>
                   </div>
                   <h4 className="font-editorial text-sm font-bold text-paper truncate">
                     {stay.name}
