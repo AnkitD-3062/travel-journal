@@ -87,13 +87,13 @@ export default function StayDetailsModal({ stay, isOpen, onClose, onBookStay }) 
               {/* Capacity Specs */}
               <div className="flex flex-wrap items-center gap-4 py-4 border-y border-ink-border text-xs sm:text-sm text-paper/80 font-mono">
                 <span>{stay.type}</span>
-                <span>•</span>
+                <span>â€¢</span>
                 <span>{stay.guests} guests max</span>
-                <span>•</span>
+                <span>â€¢</span>
                 <span>{stay.bedrooms} bedroom(s)</span>
-                <span>•</span>
+                <span>â€¢</span>
                 <span>{stay.beds} bed(s)</span>
-                <span>•</span>
+                <span>â€¢</span>
                 <span>{stay.baths} bath(s)</span>
               </div>
 
@@ -117,7 +117,7 @@ export default function StayDetailsModal({ stay, isOpen, onClose, onBookStay }) 
                     )}
                   </div>
                   <p className="text-xs text-muted font-sans mt-0.5">
-                    Hosting since {stay.host.joinedYear} • {stay.host.responseRate} response rate
+                    Hosting since {stay.host.joinedYear} â€¢ {stay.host.responseRate} response rate
                   </p>
                   <p className="text-xs text-paper/70 mt-1 italic">
                     "{stay.host.bio}"
@@ -155,7 +155,7 @@ export default function StayDetailsModal({ stay, isOpen, onClose, onBookStay }) 
                   <h3 className="font-editorial text-xl font-bold text-paper">
                     Guest Reflections
                   </h3>
-                  <span className="text-xs font-mono text-gold font-bold">? {stay.rating} Overall Rating</span>
+                  <span className="text-xs font-mono text-gold font-bold">â˜… {stay.rating} Overall Rating</span>
                 </div>
 
                 <div className="space-y-3">
@@ -214,7 +214,7 @@ export default function StayDetailsModal({ stay, isOpen, onClose, onBookStay }) 
 
               <div className="flex items-center justify-center gap-2 text-[11px] text-muted text-center font-mono">
                 <ShieldCheck className="w-3.5 h-3.5 text-teal" />
-                <span>Zero hidden fees • Adds to Travel Journal</span>
+                <span>Zero hidden fees â€¢ Adds to Travel Journal</span>
               </div>
             </div>
           </div>

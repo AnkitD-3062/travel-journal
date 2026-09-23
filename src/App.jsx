@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
+import TabDock from "./components/TabDock";
 import VibeHero from "./components/VibeHero";
 import StayCard from "./components/StayCard";
 import StayDetailsModal from "./components/StayDetailsModal";
@@ -125,7 +126,7 @@ export default function App() {
                     Your Curated Sanctuaries
                   </h2>
                   <p className="text-xs sm:text-sm text-muted mt-1 font-mono">
-                    {rankedStays.length} stays matching your rhythm � Ranked by vibe harmony
+                    {rankedStays.length} stays matching your rhythm • Ranked by vibe harmony
                   </p>
                 </div>
               </div>
@@ -216,18 +217,24 @@ export default function App() {
         onBookingSuccess={handleBookingSuccess}
       />
 
+      <TabDock
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        bookingsCount={bookings.length}
+      />
+
       {/* Footer */}
-      <footer className="border-t border-ink-border bg-ink-light/50 py-10 mt-16 text-center text-xs text-muted">
+      <footer className="border-t border-ink-border bg-ink-light/50 pt-10 pb-24 mt-16 text-center text-xs text-muted">
         <div className="max-w-7xl mx-auto px-4 space-y-2">
           <div className="flex items-center justify-center gap-2 font-editorial text-base text-paper">
             <Compass className="w-4 h-4 text-gold" />
             <span>Travel Journal</span>
           </div>
           <p className="font-light">
-            Stay discovery by feeling � Handcrafted with vintage editorial care & Airbnb-grade experience.
+            Stay discovery by feeling • Handcrafted with vintage editorial care & Airbnb-grade experience.
           </p>
           <p className="font-mono text-[11px] text-muted/60">
-            � 2026 Travel Journal Platform � All sample stays, photos & coordinates curated for immersive discovery.
+            © 2026 Travel Journal Platform • All sample stays, photos & coordinates curated for immersive discovery.
           </p>
         </div>
       </footer>

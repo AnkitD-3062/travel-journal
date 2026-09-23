@@ -205,7 +205,7 @@ export default function JournalDashboard({ bookings, setBookings, onExploreMore 
 
                   <div className="mt-2 flex items-center justify-between text-xs">
                     <span className="font-mono text-gold font-semibold">
-                      {b.nights} Nights � ${b.totalPrice}
+                      {b.nights} Nights • ${b.totalPrice}
                     </span>
                     <span className="text-[11px] font-mono text-paper/70">
                       {b.checkIn}
@@ -255,9 +255,9 @@ export default function JournalDashboard({ bookings, setBookings, onExploreMore 
 
                   {/* Weather & Booking Badge */}
                   <div className="flex items-center gap-3 bg-ink-card/90 border border-ink-border px-4 py-2 rounded-2xl">
-                    <span className="text-2xl">{activeTrip.weather?.icon || "???"}</span>
+                    <span className="text-2xl">{activeTrip.weather?.icon || "🌤️"}</span>
                     <div className="text-xs font-mono">
-                      <div className="font-bold text-paper">{activeTrip.weather?.temp || "19�C"}</div>
+                      <div className="font-bold text-paper">{activeTrip.weather?.temp || "19°C"}</div>
                       <span className="text-muted">{activeTrip.weather?.condition || "Crisp & Clear"}</span>
                     </div>
                   </div>
@@ -269,7 +269,7 @@ export default function JournalDashboard({ bookings, setBookings, onExploreMore 
                     <Calendar className="w-5 h-5 text-gold" />
                     <div className="text-xs">
                       <span className="text-muted font-mono text-[10px] uppercase block">Dates</span>
-                      <strong className="text-paper">{activeTrip.checkIn} ? {activeTrip.checkOut}</strong>
+                      <strong className="text-paper">{activeTrip.checkIn} → {activeTrip.checkOut}</strong>
                     </div>
                   </div>
 
@@ -353,14 +353,14 @@ export default function JournalDashboard({ bookings, setBookings, onExploreMore 
                 </h4>
                 <div className="space-y-3 text-xs">
                   <div className="p-3 rounded-xl bg-ink-card border border-ink-border">
-                    <span className="font-bold text-gold block mb-0.5">?? Morning Golden Hour</span>
+                    <span className="font-bold text-gold block mb-0.5">🌅 Morning Golden Hour</span>
                     <p className="text-paper/75">
                       Walk down to the waterside deck with a hot cup between 6:30 and 7:15 AM when lake mist rises.
                     </p>
                   </div>
 
                   <div className="p-3 rounded-xl bg-ink-card border border-ink-border">
-                    <span className="font-bold text-teal-light block mb-0.5">?? Village Baker & Market</span>
+                    <span className="font-bold text-teal-light block mb-0.5">🥖 Village Baker & Market</span>
                     <p className="text-paper/75">
                       The local bakery bakes warm sourdough daily at 8:00 AM. Cash only, 10 min walk through the birch trees.
                     </p>
@@ -397,11 +397,11 @@ export default function JournalDashboard({ bookings, setBookings, onExploreMore 
                     onChange={(e) => setNewNoteMood(e.target.value)}
                     className="bg-ink border border-ink-border rounded-xl px-3 py-2 text-xs text-gold font-semibold focus:outline-none cursor-pointer"
                   >
-                    <option value="Serene">Mood: Serene ??</option>
-                    <option value="Reflective">Mood: Reflective ???</option>
-                    <option value="Awe-inspired">Mood: Awe-inspired ?</option>
-                    <option value="Creative">Mood: Creative ??</option>
-                    <option value="Restful">Mood: Restful ??</option>
+                    <option value="Serene">Mood: Serene 😌</option>
+                    <option value="Reflective">Mood: Reflective 💭</option>
+                    <option value="Awe-inspired">Mood: Awe-inspired ✨</option>
+                    <option value="Creative">Mood: Creative 🎨</option>
+                    <option value="Restful">Mood: Restful 🌙</option>
                   </select>
                 </div>
 
@@ -440,7 +440,7 @@ export default function JournalDashboard({ bookings, setBookings, onExploreMore 
                           </span>
                         </div>
                         <span className="font-mono text-muted text-[11px]">
-                          {note.date} � {note.time}
+                          {note.date} • {note.time}
                         </span>
                       </div>
                       <p className="text-xs sm:text-sm text-ink/85 font-serif leading-relaxed whitespace-pre-line">
